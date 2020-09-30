@@ -53,4 +53,4 @@ Outputs:
     Value: !Sub
       - http://${PublicAddress}
       - PublicAddress: !GetAtt WebServerHost.PublicDnsName
-    Description: Roman Numerals 
+    Description: Roman Numerals Converter static web page by Matt the cockney ;-)
