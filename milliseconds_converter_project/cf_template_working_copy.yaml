@@ -86,7 +86,7 @@ Resources:
       Port: 80 #required
       Protocol: HTTP #required
 
-  MyAutoScalingGroup:
+  WebserverASG:
     Type: "AWS::AutoScaling::AutoScalingGroup"
     Properties:
       AutoScalingGroupName: String
