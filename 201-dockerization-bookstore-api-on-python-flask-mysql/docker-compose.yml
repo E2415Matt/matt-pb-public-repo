@@ -12,15 +12,14 @@ services:
       - webnet
 
   websrv:
+    restart: always
     depends_on:
       - database
     build: .
-    ports:
-      - "80:5000"
-    restart: always
     networks:
       - webnet
-
+    ports:
+      - "80:5000"
 networks:
   webnet:
     driver: bridge
