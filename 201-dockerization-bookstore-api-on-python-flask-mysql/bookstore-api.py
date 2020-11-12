@@ -36,7 +36,8 @@ def init_bookstore_db():
     VALUES
         ("Where the Crawdads Sing", "Delia Owens", 1 ),
         ("The Vanishing Half: A Novel", "Brit Bennett", 0),
-        ("1st Case", "James Patterson, Chris Tebbetts", 0);
+        ("1st Case", "James Patterson, Chris Tebbetts", 0),
+        ("Red Notice", "Bill Browder", 0);
     """
     cursor.execute(drop_table)
     cursor.execute(books_table)
@@ -122,11 +123,11 @@ def remove_book(book):
     return True if row is None else False
 
 
-# Write a function named `home` which returns 'Welcome to the Matt's Bookstore API Service',
+# Write a function named `home` which returns 'Welcome to the Callahan's Bookstore API Service',
 # and assign to the static route of ('/')
 @app.route('/')
 def home():
-    return "Welcome to Matt's Bookstore API Service"
+    return "Welcome to Altun Family's Bookstore API Service"
 
 # Write a function named `get_books` which returns all books in JSON format for `GET`,
 # and assign to the static route of ('/books')
