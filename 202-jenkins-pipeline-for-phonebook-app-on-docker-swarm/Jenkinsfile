@@ -11,7 +11,7 @@ pipeline {
         APP_NAME = "phonebook"
         AWS_STACK_NAME = "Serdar-Phonebook-App-${BUILD_NUMBER}"
         CFN_TEMPLATE="phonebook-docker-swarm-cfn-template.yml"
-        CFN_KEYPAIR="serdar"
+        CFN_KEYPAIR="mattsecond"
         HOME_FOLDER = "/home/ec2-user"
         GIT_FOLDER = sh(script:'echo ${GIT_URL} | sed "s/.*\\///;s/.git$//"', returnStdout:true).trim()
 
