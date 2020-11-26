@@ -24,3 +24,14 @@ Project-202: Docker Swarm Deployment of Phonebook Application (Python Flask) wit
 # https://github.com/awslabs/amazon-ecr-credential-helper
 # mssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -r us-east-1 <worker-id> or <master-id>
 # 
+
+Jenkins server should be capable of:
+    - create ECR Repository
+    - build docker image 
+    - push Docker image to ECR repository 
+    - create infrastructure for Athe Application
+    - Deploy the application
+
+# <EC@ instance Public IPv4 address>:8080//env-vars.html/ (e.g. 54.165.185.41:8080/env-vars.html/)
+# aws ec2 describe-instances --region us-east-1 --instance-ids i-065b7bdaa242205eb --query 'Reservations[*].Instances[*].[PublicIpAddress]' --output text
+# 
