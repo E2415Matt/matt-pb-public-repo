@@ -1,12 +1,14 @@
-In this article we will learn basic principals about version control and we will carry out a simple git practise together.
+Git Practices For Daily Use
+
+In this article we will learn basic principles about version control, and we will carry out a simple git practise together.
 
 What is version control?
-Version control in software engineering is known as source control. It is the methods used by software development and IT operations teams to track and manage changes to software and documentation. Multi player collaboration requires coordination and forces teams to record what modifications done when and by hwom so that possible confusions can be avoided, in case of failures old versions of the code can be recyled and DevOps teams can achieve development time reduction and increase deployment success rate. Versioning also allows many teams to work on same software package's several different features concurrently.
+Version control in software engineering is known as source control. It is the methods used by software development and IT operations teams to track and manage changes to software and documentation. Multi player collaboration requires coordination and forces teams to record what modifications done when and by who so that possible confusions can be avoided, in case of failures old versions of the code can be re cycled and DevOps teams can achieve development time reduction and increase deployment success rate. Versioning also allows many teams to work on same software package's several different features concurrently.
 
 What is Git?
-Git is a free and open source version control system designed to handle every software development projects from smallest to largest with speed, reliability and efficiency. Originall developed by Linus Torvalds, widely used individuals and organisations since it's release in 2005. `please go to https://git-scm.com/about for more information about git.
+Git is a free and open-source version control system designed to handle every software development projects from smallest to largest with speed, reliability and efficiency. Original developed by Linus Torvalds, widely used individuals and organisations since its release in 2005. Please go to https://git-scm.com/about for more information about git.
 
-To start using Git please go to https://git-scm.com/downloads to download. Please choose your computer's operating system and follow the step by step simple instructions on the page. Once you succesfully downloaded Git on your computer you good to go.
+To start using Git please go to https://git-scm.com/downloads to download. Please choose your computer's operating system and follow the step-by-step simple instructions on the page. Once you successfully downloaded Git on your computer you good to go.
 
 Before start using Git please ensure to configure your info as follows:
 $ git config --global user.name "<Your Name>"
@@ -579,6 +581,7 @@ Fast-forward
  create mode 100644 new_branch_file.txt
 
 Using remote repository:
+
 Go to your Gitgub account, click Repositories, click green new button on top right hand side, and create new repo with name "python" (and do not check README)
 
 Go to Desktop and create a folder named python and a file named text.txt inside:
@@ -597,9 +600,38 @@ $ git add .
 $ git commit -m "second added"
 $ git push
 
-You are now gone through full cycle of version control basics by creating a folder, staging, commiting to local repository, modifiying, rolling back, branching, merging and finally connecting your local repository to remote repository.
 
-There are lot to learn and practise about whole software development life cycle management buy do not forget lerning and growth curve are not coincidence. Practise make it perfect.
+If you already have a Github repository and you would like to use the content of that particular remote repository you can use following command to copy content and connect the local repository as origin to your local repository as follows.
+First go to Github repository page click green coloured code button on top right hand side, click HTTPS and copy the content of the box right below HTTPS.
+And then go into the directory where you want to copy the Github / remote repository and use:
+$ git clone https://github.com/<your github username>/<repository name>.git 
+
+output:
+Cloning into 'jenkins-maven-project'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 37 (delta 2), reused 32 (delta 0), pack-reused 0
+Receiving objects: 100% (37/37), 7.58 KiB | 3.79 MiB/s, done.
+Resolving deltas: 100% (2/2), done.
+
+$ cd jenkins-maven-project
+$ ls -al
+
+You will see that among the other files a ‘.git’ file appeared confirming that this folder is a git repository. And from now on modifications at local repository can be uploaded to remote repository by using git push and modifications at remote repository can be downloaded by using git pull commands. Let's practise:
+$ vim hello.txt
+$ git status
+$ git add .
+$ git commit -m "added hello.txt"
+$ git push
+
+Now you should be able to see new file in your remote repository. Open the file at remote repository and make changes to content of hello.txt. In order to update local repository of the modifications made in remote repository and see content change of hello.txt:
+$ git pull
+$ cat hello.txt
+
+You are now gone through full cycle of version control basics by creating a folder, staging (indexing), committing to local repository, modifying, rolling back, branching, merging and finally connecting your local repository to remote repository. Also cloning from remote repository and updating modifications to and from remote repository.
+
+There are lot to learn and practise about whole software development life cycle management. Please note growth curve follows the learning curve. Practise make it perfect.
 
 I keep practising. 
 
@@ -610,3 +642,4 @@ M. Altun
 21Feb2021, London
 
 DevOps Engineer @ Finspire Technology
+
